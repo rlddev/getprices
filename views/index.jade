@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  h1= title
+  form
+    .form-group
+    label(for="volume") Volume:
+    input#volume.form-control(type="text", value="Any")
+    
+    br
+    button.btn.btn-primary#prices(type="button") Get Price Difference
+  
+  br
+  
+  div.row(hidden)
+    div.col-sm-4
+      span.badge.badge-danger Bitfinex(BUY)
+      table#table.tablebuy(data-toggle="table")
+        thead
+          tr
+            th(data-field="price") Price
+            th(data-field="amount") Amount
+            th(data-field="sum") Total
+    
+    div.col-sm-3
+      div.alert.alert-danger.alert-dismissable
+        div#difference Difference
+    div.col-sm-4
+      span.badge.badge-danger Poloniex (SELL)
+      table#table.tablesell(data-toggle="table")
+        thead
+          tr
+            th(data-field="price") Price
+            th(data-field="amount") Amount
+            th(data-field="sum") Total
